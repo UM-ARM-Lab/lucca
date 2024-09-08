@@ -36,6 +36,7 @@ $color-selection-dark: false !default;
 @import "_highlight.scss";
 
 
+//  TODO: clean this. it scales down large tex equations for small screens
 .katex {
     max-width: 100%;
     display: inline-block;
