@@ -34,3 +34,29 @@ $color-selection-dark: false !default;
 @import "_figures.scss";
 @import "_footnotes.scss";
 @import "_highlight.scss";
+
+
+.katex {
+    max-width: 100%;
+    display: inline-block;
+}
+
+.katex-display {
+    text-align: center;
+    font-size: 1em; /* Default size */
+}
+
+/* Scale down when the equation gets too wide */
+@media (max-width: 600px) {
+    .katex-display {
+        font-size: 0.65em; /* Reduce font size */
+    }
+}
+
+/* Second threshold for even smaller screens */
+@media (max-width: 400px) {
+    .katex-display {
+        font-size: 0.55em; /* Scale down again at 400px */
+    }
+}
+
