@@ -43,13 +43,13 @@ $$
 
 # LUCCa
 
-Given a dynamics predictor and a small calibration dataset, LUCCa provides probabilistically valid prediction regions for the robot's future states accounting for both aleatoric and epistemic uncertainty. We prove its validity for any finite set of calibration data, predictors outputting a multivariate normal uncertainty, any unknown true dynamics function, and uncharacterized aleatoric perturbations. LUCCa calibrates the uncertainty locally relative to the system's state-action space, leading to prediction regions that are representative of predictive uncertainty and therefore useful for planning. For the first planning step, LUCCa satisfies the safety condition (3) above for any predictor form. For subsequent planning steps, this becomes more complex, but we use Loewner orders to prove that, if the dynamics approximation is linear (actual dynamics are still unconstrained), then LUCCa satisfies the safety condition (3) for all planning steps no matter the horizon length (see Appendix `$A$` for a discussion and the proof).
+Given a dynamics predictor and a small calibration dataset, LUCCa provides probabilistically valid prediction regions for the robot's future states accounting for both aleatoric and epistemic uncertainty. We prove its validity for any finite set of calibration data, predictors outputting a multivariate normal uncertainty, any unknown true dynamics function, and uncharacterized aleatoric perturbations. LUCCa calibrates the uncertainty locally relative to the system's state-action space, leading to prediction regions that are representative of predictive uncertainty and therefore useful for planning. For the first planning step, LUCCa satisfies the safety condition (3) above for any predictor form. For subsequent planning steps, such a guarantee becomes more complex but we show that if the dynamics approximation is linear (actual dynamics are still unconstrained), then LUCCa satisfies the safety condition (3) for all planning steps no matter the horizon length (see Appendix `$A$` for a discussion and the proof).
 
 {{ figure(alt=["LUCCA Algorithm", "Calibrated Rollout"] src=["lucca_algo.png", "calibrated_rollout.png"] dark_invert=[true, true]) }}
 
 # Experiments
 
-We conducted experiments with an MPC controller that uses LUCCa to plan short-horizon trajectories to reach a goal. We compared LUCCa with a baseline on a double-integrator system over four environments shown below. In the white regions the dynamics predictor corresponds to the ground truth dynamics, but in the yellow regions there is a significant mismatch (actual dynamics become lower-friction). In both areas there is aleatoric uncertainty.
+We conducted experiments with an MPC controller that uses LUCCa to plan short-horizon trajectories to reach a goal region (without colliding with any obstacles). We compared LUCCa with a baseline (same predictor but without the conformal calibration step) on a double-integrator system over four environments shown below. In the white regions the dynamics predictor corresponds to the ground truth dynamics, but in the yellow regions there is a significant mismatch (actual dynamics become lower-friction). In both areas there is aleatoric uncertainty. This dynamical system can build significant momentum, and thus underestimating the predictive uncertainty can lead to entering regions of inevitable collision. Hence, it is crucial to accurately quantity uncertainty multiple time-steps into the future. 
 
 {{ figure(src = ["./Corridor_Uncalibrated Baseline.mp4","./Corridor_LUCCa.mp4"], subcaption = ["**Uncalibrated Baseline** (Corridor Map)","**LUCCa** (Corridor Map)"], dark_invert=[false,false]) }}
 
@@ -62,12 +62,12 @@ We conducted experiments with an MPC controller that uses LUCCa to plan short-ho
 
 The results suggest that using LUCCa's uncertainty estimate improves the success rate in these scenarios by avoiding collision. However, LUCCa only guarantees that `$(1-\alpha)$` percent of true states will be collision-free, so it does not provide a hard guarantee that the planned actions will result in collision-free states. We also note that the baseline did reach the goal faster when it didn't collide.
 
-{% figure(alt=["vGPMP comparison table"] src=["perf_table.svg"] dark_invert=[true] style="width:100%") %}
+{% figure(alt=["LUCCa vs Baseline Performance Table"] src=["perf_table.svg"] dark_invert=[true] style="width:100%") %}
 **Table.** Comparison of LUCCa vs baseline in four environment over 30 runs (each).
 {% end %}
 
 
-Details about LUCCa's computational overhead (negligible) and its empirical coverage (in agreement with the theoretical bounds) can be found in the full paper (Section `$6$`). We also include visualizations of the local conformal scaling factor in Appendix `$B$`.
+Details about LUCCa's computational overhead (~3 ms per planning step) and its empirical coverage (in agreement with the theoretical bounds) can be found in the full paper (Section `$6$`). We also include visualizations of the local conformal scaling factor in Appendix `$B$`.
 
 # BibTeX <small><small>(cite this!)</small></small>
 
