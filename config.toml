@@ -12,5 +12,5 @@ smart_punctuation = true
 [extra]
 favicon = false
 large_card = true
-footer_text = "This website is built using [Zola](https://www.getzola.org) and the [Academic Paper](http://github.com/aterenin/academic-paper/) theme, which is [designed to last](https://jeffhuang.com/designed_to_last/)."
+footer_text = "This website is built using <a href='https://www.getzola.org' target='_blank'>Zola</a> and the <a href='http://github.com/aterenin/academic-paper/' target='_blank'>Academic Paper</a> theme, which is <a href='https://jeffhuang.com/designed_to_last/' target='_blank'>designed to last</a>."
 server_side_katex = true
