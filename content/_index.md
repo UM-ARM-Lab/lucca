@@ -7,8 +7,8 @@ authors = [
 ]
 venue = {name = "16th International Workshop on the Algorithmic Foundations of Robotics (WAFR) 2024", url = "https://www.algorithmic-robotics.org/"}
 buttons = [
-    {name = "Paper", url = ""},
-    {name = "PDF", url = ""},
+    {name = "Paper", url = "https://arxiv.org/abs/2409.08249"},
+    {name = "PDF", url = "https://arxiv.org/pdf/2409.08249"},
     {name = "Poster", url = ""},
 ]
 katex = true
@@ -72,13 +72,13 @@ Details about LUCCa's computational overhead (~3 ms per planning step) and its e
 # BibTeX <small><small>(cite this!)</small></small>
 
 ```
-@misc{marques2024----,
+@misc{marques2024quantifyingaleatoricepistemicdynamics,
       title={Quantifying Aleatoric and Epistemic Dynamics Uncertainty via Local Conformal Calibration}, 
       author={Luís Marques and Dmitry Berenson},
       year={2024},
-      eprint={-----},
+      eprint={2409.08249},
       archivePrefix={arXiv},
-      primaryClass={cs.Ro},
-      url={-----}, 
+      primaryClass={cs.RO},
+      url={https://arxiv.org/abs/2409.08249}, 
 }
 ```
