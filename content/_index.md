@@ -67,7 +67,7 @@ The results suggest that using LUCCa's uncertainty estimate improves the success
 {% end %}
 
 
-Details about LUCCa's computational overhead (~3 ms per planning step) and its empirical coverage (in agreement with the theoretical bounds) can be found in the full paper (Section `$6$`). We also include visualizations of the local conformal scaling factor in Appendix `$B$`.
+Details about LUCCa's computational overhead (~0.3 ms per planning step) and its empirical coverage (in agreement with the theoretical bounds) can be found in the full paper (Section `$6$`). We also include visualizations of the local conformal scaling factor in Appendix `$B$`.
 
 # BibTeX <small><small>(cite this!)</small></small>
 
