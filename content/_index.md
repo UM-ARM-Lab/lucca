@@ -9,7 +9,7 @@ venue = {name = "16th International Workshop on the Algorithmic Foundations of R
 buttons = [
     {name = "Paper", url = "https://arxiv.org/abs/2409.08249"},
     {name = "PDF", url = "https://arxiv.org/pdf/2409.08249"},
-    {name = "Poster", url = ""},
+    {name = "Slides", url = "https://luis-marques.github.io/slides/wafr24/"},
 ]
 katex = true
 large_card = true
