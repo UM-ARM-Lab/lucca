@@ -10,6 +10,7 @@ buttons = [
     {name = "Paper", url = "https://arxiv.org/abs/2409.08249"},
     {name = "PDF", url = "https://arxiv.org/pdf/2409.08249"},
     {name = "Slides", url = "https://luis-marques.github.io/slides/wafr24/"},
+    {name = "Poster", url = "https://luis-marques.github.io/assets/pdf/posterUMichAISymposium2024.pdf"}
 ]
 katex = true
 large_card = true
