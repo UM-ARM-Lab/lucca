@@ -10,6 +10,7 @@ buttons = [
     {name = "Paper", url = "https://arxiv.org/abs/2409.08249"},
     {name = "PDF", url = "https://arxiv.org/pdf/2409.08249"},
     {name = "Slides", url = "https://luis-marques.github.io/slides/wafr24/"},
+    {name = "Poster", url = "https://luis-marques.github.io/assets/pdf/posterUMichAISymposium2024.pdf"}
 ]
 katex = true
 large_card = true
@@ -43,13 +44,13 @@ $$
 
 # LUCCa
 
-Given a dynamics predictor and a small calibration dataset, LUCCa provides probabilistically valid prediction regions for the robot's future states accounting for both aleatoric and epistemic uncertainty. We prove its validity for any finite set of calibration data, predictors outputting a multivariate normal uncertainty, any unknown true dynamics function, and uncharacterized aleatoric perturbations. LUCCa calibrates the uncertainty locally relative to the system's state-action space, leading to prediction regions that are representative of predictive uncertainty and therefore useful for planning. For the first planning step, LUCCa satisfies the safety condition (3) above for any predictor form. For subsequent planning steps, such a guarantee becomes more complex but we show that if the dynamics approximation is linear (actual dynamics are still unconstrained), then LUCCa satisfies the safety condition (3) for all planning steps no matter the horizon length (see Appendix `$A$` for a discussion and the proof).
+Given a dynamics predictor and a small calibration dataset, LUCCa provides probabilistically valid prediction regions for the robot's future states accounting for both aleatoric and epistemic uncertainty. We prove its validity for any finite set of calibration data, predictors outputting a multivariate normal uncertainty, any unknown true dynamics function, and uncharacterized aleatoric perturbations. LUCCa calibrates the uncertainty locally relative to the system's state-action space, leading to prediction regions that are representative of predictive uncertainty and therefore useful for planning. For the first planning step, LUCCa satisfies the safety condition (3) above. For subsequent planning steps, such a guarantee becomes more complex but we show that if the dynamics approximation is linear (actual dynamics are still unconstrained) and we can satisfy additional assumptions on the controller, then LUCCa can satisfy the safety condition (3) for all planning steps (see Appendix `$A$` for a discussion and the proof).
 
 {{ figure(alt=["LUCCA Algorithm", "Calibrated Rollout"] src=["lucca_algo.png", "calibrated_rollout.png"] dark_invert=[true, true]) }}
 
 # Experiments
 
-We conducted experiments with an MPC controller that uses LUCCa to plan short-horizon trajectories to reach a goal region (without colliding with any obstacles). We compared LUCCa with a baseline (same predictor but without the conformal calibration step) on a double-integrator system over four environments shown below. In the white regions the dynamics predictor corresponds to the ground truth dynamics, but in the yellow regions there is a significant mismatch (actual dynamics become lower-friction). In both areas there is aleatoric uncertainty. This dynamical system can build significant momentum, and thus underestimating the predictive uncertainty can lead to entering regions of inevitable collision. Hence, it is crucial to accurately quantify uncertainty multiple time-steps into the future. 
+We conducted experiments with an MPC controller that uses LUCCa to plan short-horizon trajectories to reach a goal region (without colliding with any obstacles). We compared LUCCa with a baseline (using the same predictor but without the conformal calibration step) on a double-integrator system over four environments shown below. In the white regions the dynamics predictor corresponds to the ground truth dynamics, but in the yellow regions there is a significant mismatch (actual dynamics become lower-friction). In both areas there is aleatoric uncertainty. This dynamical system can build significant momentum, and thus underestimating the predictive uncertainty can lead to entering regions of inevitable collision. Hence, it is crucial to accurately quantify uncertainty multiple time-steps into the future. 
 
 {{ figure(src = ["./Corridor_Uncalibrated Baseline.mp4","./Corridor_LUCCa.mp4"], subcaption = ["**Uncalibrated Baseline** (Corridor Map)","**LUCCa** (Corridor Map)"], dark_invert=[false,false]) }}
 
