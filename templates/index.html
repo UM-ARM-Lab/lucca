@@ -36,16 +36,18 @@
                     {% for button in this.extra.buttons %}
                         <a class="btn" href="{{ button.url | safe }}" target="_blank">
                             {% if not button.no_icon %}
-                                {{- icons::icon(name = button.name | lower) -}}
-                                &nbsp;
+                                <span class="btn-icon" aria-hidden="true">
+                                    {{- icons::icon(name = button.name | lower) -}}
+                                </span>
                             {% endif %}
-                            {{- button.name -}}
+                            <span class="btn-label">{{- button.name -}}</span>
                         </a>
                     {% endfor %}
                 </div>
                 <h2>
+                    {% set arxiv_button = this.extra.buttons | filter(attribute = 'name', value = 'arXiv') | first %}
                     {% set paper_button = this.extra.buttons | filter(attribute = 'name', value = 'Paper') | first %}
-                    <a href="{{ this.extra.venue.url | default(value = paper_button.url | default(value = this.path ~ '#')) | safe }}" target="_blank">
+                    <a href="{{ this.extra.venue.url | default(value = arxiv_button.url | default(value = paper_button.url | default(value = this.path ~ '#'))) | safe }}" target="_blank">
                         <span itemprop="isPartOf" itemscope itemtype="http://schema.org/Periodical"><span itemprop="name" style="white-space: normal;">
                             {{- this.extra.venue.name -}}
                         </span></span>{% if this.extra.venue.date or this.date %}&nbsp;<time datetime="{{ this.extra.venue.date | default(value = this.date) | date(format='%+') }}" itemprop="datePublished">

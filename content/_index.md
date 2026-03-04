@@ -5,12 +5,13 @@ authors = [
     {name = "Luís Marques", url = "https://luis-marques.github.io/"},
     {name = "Dmitry Berenson", url = "https://berenson.robotics.umich.edu/"}
 ]
-venue = {name = "16th International Workshop on the Algorithmic Foundations of Robotics (WAFR) 2024", url = "https://www.algorithmic-robotics.org/"}
+venue = {name = "16th International Workshop on the Algorithmic Foundations of Robotics (WAFR) 2024", url = ""}
 buttons = [
-    {name = "Paper", url = "https://arxiv.org/abs/2409.08249"},
-    {name = "PDF", url = "https://arxiv.org/pdf/2409.08249"},
+    {name = "arXiv", url = "https://arxiv.org/abs/2409.08249"},
+    {name = "Paper", url = "https://arxiv.org/pdf/2409.08249"},
     {name = "Slides", url = "https://luis-marques.github.io/slides/wafr24/"},
-    {name = "Poster", url = "https://luis-marques.github.io/assets/pdf/posterUMichAISymposium2024.pdf"}
+    {name = "Poster", url = "https://luis-marques.github.io/assets/pdf/posterUMichAISymposium2024.pdf"},
+    {name = "Thread", url = "https://x.com/TheLuisMarques/status/1862629341403685329"}
 ]
 katex = true
 large_card = true
