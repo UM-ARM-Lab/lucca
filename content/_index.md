@@ -5,7 +5,7 @@ authors = [
     {name = "Luís Marques", url = "https://luis-marques.github.io/"},
     {name = "Dmitry Berenson", url = "https://berenson.robotics.umich.edu/"}
 ]
-venue = {name = "16th International Workshop on the Algorithmic Foundations of Robotics (WAFR) 2024", url = ""}
+venue = {name = "16th International Workshop on the Algorithmic Foundations of Robotics (WAFR) 2024", url = "https://archive.parasollab.web.illinois.edu/events/wafr2024/"}
 buttons = [
     {name = "arXiv", url = "https://arxiv.org/abs/2409.08249"},
     {name = "Paper", url = "https://arxiv.org/pdf/2409.08249"},
@@ -15,7 +15,7 @@ buttons = [
 ]
 katex = true
 large_card = true
-favicon = false
+favicon = true
 +++
 
 Whether learned, simulated, or analytical, approximations of a robot's dynamics can be inaccurate when encountering novel environments. Many approaches have been proposed to quantify the aleatoric uncertainty of such methods, i.e. uncertainty resulting from stochasticity, however these estimates alone are not enough to properly estimate the uncertainty of a model in a novel environment, where the actual dynamics can change. Such changes can induce epistemic uncertainty, i.e. uncertainty due to a lack of information/data. Accounting for *both* epistemic and aleatoric dynamics uncertainty in a theoretically-grounded way remains an open problem. We introduce **L**ocal **U**ncertainty **C**onformal **Ca**libration (LUCCa), a conformal prediction-based approach that calibrates the aleatoric uncertainty estimates provided by dynamics models to generate probabilistically-valid prediction regions of the system's state. We account for both epistemic and aleatoric uncertainty non-asymptotically, without strong assumptions about the form of the true dynamics or how it changes. The calibration is performed locally in the state-action space, leading to uncertainty estimates that are useful for planning. We validate our method by constructing probabilistically-safe plans for a double-integrator under significant changes in dynamics.
