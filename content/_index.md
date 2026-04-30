@@ -73,8 +73,14 @@ Details about LUCCa's computational overhead (~0.3 ms per planning step) and its
 
 # BibTeX <small><small>(cite this!)</small></small>
 
-```
-@misc{marques2024quantifyingaleatoricepistemicdynamics,
+<div class="bibtex-copy-container">
+    <button id="bibtex-copy-button" type="button" aria-label="Copy BibTeX to clipboard">
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path d="M16 1H4a2 2 0 0 0-2 2v12h2V3h12V1zm3 4H8a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h11a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2zm0 16H8V7h11v14z"/>
+        </svg>
+        <span>Copy to clipboard</span>
+    </button>
+    <pre id="bibtex-content"><code>@misc{marques2024quantifyingaleatoricepistemicdynamics,
       title={Quantifying Aleatoric and Epistemic Dynamics Uncertainty via Local Conformal Calibration}, 
       author={Luís Marques and Dmitry Berenson},
       year={2024},
@@ -82,5 +88,101 @@ Details about LUCCa's computational overhead (~0.3 ms per planning step) and its
       archivePrefix={arXiv},
       primaryClass={cs.RO},
       url={https://arxiv.org/abs/2409.08249}, 
+}</code></pre>
+</div>
+
+<script>
+(() => {
+    const copyButton = document.getElementById("bibtex-copy-button");
+    const bibtexContent = document.getElementById("bibtex-content");
+    if (!copyButton || !bibtexContent) return;
+
+    const defaultText = "Copy to clipboard";
+    const setButtonLabel = (label) => {
+        const textSpan = copyButton.querySelector("span");
+        if (textSpan) textSpan.textContent = label;
+    };
+
+    copyButton.addEventListener("click", () => {
+        const bibtexText = bibtexContent.textContent ?? "";
+        if (!navigator.clipboard || !navigator.clipboard.writeText) {
+            setButtonLabel("Clipboard not available");
+            setTimeout(() => setButtonLabel(defaultText), 3000);
+            return;
+        }
+
+        navigator.clipboard.writeText(bibtexText).then(() => {
+            setButtonLabel("Copied!");
+            setTimeout(() => setButtonLabel(defaultText), 3000);
+        }).catch(() => {
+            setButtonLabel("Copy failed");
+            setTimeout(() => setButtonLabel(defaultText), 3000);
+        });
+    });
+})();
+</script>
+
+<style>
+.bibtex-copy-container {
+    position: relative;
 }
-```
+
+.bibtex-copy-container pre {
+    margin-top: 0;
+    padding-top: 0.9rem;
+    padding-right: 11.2rem;
+    overflow-x: auto;
+    white-space: pre;
+}
+
+.bibtex-copy-container code {
+    font-size: 0.86rem;
+    line-height: 1.35;
+}
+
+#bibtex-copy-button {
+    position: absolute;
+    top: 0.9rem;
+    right: 0.6rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    border: 1px solid #d0d7de;
+    border-radius: 6px;
+    background: #f6f8fa;
+    color: #24292f;
+    padding: 0.35rem 0.6rem;
+    font-size: 0.85rem;
+    cursor: pointer;
+    z-index: 1;
+}
+
+#bibtex-copy-button:hover {
+    background: #eef2f6;
+}
+
+#bibtex-copy-button svg {
+    width: 1rem;
+    height: 1rem;
+    fill: currentColor;
+}
+
+@media screen and (max-width: 768px) {
+    #bibtex-copy-button {
+        top: 0.45rem;
+        right: 0.45rem;
+        font-size: 0.78rem;
+        padding: 0.3rem 0.5rem;
+    }
+
+    .bibtex-copy-container pre {
+        padding-top: 0.75rem;
+        padding-right: 9.7rem;
+    }
+
+    .bibtex-copy-container code {
+        font-size: 0.73rem;
+        line-height: 1.28;
+    }
+}
+</style>
