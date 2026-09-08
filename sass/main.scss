@@ -61,3 +61,114 @@ $color-selection-dark: false !default;
     }
 }
 
+/* Shared phone refinements for the paper sites. */
+@media (max-width: $responsive-cutoff) {
+    .container {
+        padding-right: 1rem;
+        padding-left: 1rem;
+    }
+
+    .header {
+        margin-top: 1.25rem;
+        margin-bottom: 1.5rem;
+
+        h1 {
+            max-width: 100%;
+            margin-right: auto;
+            margin-left: auto;
+            font-size: clamp(1.75rem, 7vw, 2.25rem);
+            line-height: 1.12;
+            text-wrap: balance;
+            overflow-wrap: anywhere;
+        }
+
+        h2 {
+            font-size: 1rem;
+            line-height: 1.4;
+            text-wrap: balance;
+        }
+
+        > div {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .btn {
+            min-height: 2.75rem;
+            margin: 0;
+        }
+    }
+
+    .content p,
+    figure figcaption {
+        text-align: left;
+    }
+
+    .content,
+    .content pre {
+        max-width: 100%;
+        min-width: 0;
+    }
+
+    .content pre,
+    .katex-display,
+    .result-table-wrap {
+        overflow-x: auto;
+        overscroll-behavior-inline: contain;
+    }
+
+    .katex-display {
+        max-width: 100%;
+        overflow-y: hidden;
+        font-size: 0.85em;
+    }
+
+    figure > div,
+    figure figure {
+        width: 100%;
+        min-width: 0;
+    }
+
+    figure figure {
+        margin-right: 0;
+        margin-left: 0;
+    }
+
+    .inference-option,
+    .carousel-prev,
+    .carousel-next,
+    .carousel-tab,
+    .carousel-dot,
+    #bibtex-copy-button {
+        min-height: 2.75rem;
+        touch-action: manipulation;
+    }
+
+    .inference-option,
+    .carousel-prev,
+    .carousel-next,
+    .carousel-dot {
+        min-width: 2.75rem;
+    }
+
+    .carousel-dot {
+        padding: 0;
+        background: transparent !important;
+    }
+
+    .carousel-dot::before {
+        width: 0.875rem;
+        height: 0.875rem;
+        border-radius: 50%;
+        background: #ccc;
+        content: "";
+    }
+
+    .carousel-dot.active::before {
+        width: 1.125rem;
+        height: 1.125rem;
+        background: var(--color-primary);
+    }
+}
