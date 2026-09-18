@@ -80,14 +80,18 @@ Details about LUCCa's computational overhead (~0.3 ms per planning step) and its
         </svg>
         <span>Copy to clipboard</span>
     </button>
-    <pre id="bibtex-content"><code>@misc{marques2024quantifyingaleatoricepistemicdynamics,
-      title={Quantifying Aleatoric and Epistemic Dynamics Uncertainty via Local Conformal Calibration}, 
-      author={Luís Marques and Dmitry Berenson},
-      year={2024},
-      eprint={2409.08249},
-      archivePrefix={arXiv},
-      primaryClass={cs.RO},
-      url={https://arxiv.org/abs/2409.08249}, 
+    <pre id="bibtex-content"><code>@inproceedings{marques2026quantifying,
+      title={Quantifying Aleatoric and Epistemic Dynamics Uncertainty via Local Conformal Calibration},
+      author={Marques, Lu{\'i}s and Berenson, Dmitry},
+      booktitle={Algorithmic Foundations of Robotics XVI, Volume 2},
+      series={Springer Proceedings in Advanced Robotics},
+      volume={38},
+      pages={85--103},
+      year={2026},
+      publisher={Springer},
+      address={Cham},
+      doi={10.1007/978-3-032-09970-9_5},
+      url={https://doi.org/10.1007/978-3-032-09970-9_5}
 }</code></pre>
 </div>
 
